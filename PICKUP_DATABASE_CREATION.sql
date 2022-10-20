@@ -98,8 +98,4 @@ VALUES
     (3, 3)
 ;
 
-SELECT * FROM pickup_event;
-DELETE FROM pickup_events
-WHERE event_id=1;
-
 SELECT * FROM  player_event;
