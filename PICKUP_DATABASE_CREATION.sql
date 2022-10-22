@@ -103,3 +103,4 @@ VALUES
 
 SELECT * FROM  pickup_events;
 SELECT * FROM player_event;
+SELECT * FROM accounts;
