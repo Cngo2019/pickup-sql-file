@@ -42,6 +42,7 @@ CREATE TABLE pickup_events(
 CREATE TABLE player_event(
 	account_id INT NOT NULL,
     event_id INT NOT NULL,
+    is_leader BOOLEAN,
     PRIMARY KEY (account_id, event_id),
     FOREIGN KEY (account_id) REFERENCES accounts(account_id) ON DELETE CASCADE,
     FOREIGN KEY (event_id) REFERENCES pickup_events(event_id) ON DELETE CASCADE
@@ -99,3 +100,4 @@ VALUES
 ;
 
 SELECT * FROM  player_event;
+
