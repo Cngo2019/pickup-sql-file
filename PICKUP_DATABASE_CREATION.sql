@@ -1,4 +1,5 @@
-# DROP SCHEMA pickup;  # uncomment this line if you get an "database already exists" error or something along those lines
+DROP SCHEMA IF EXISTS pickup;
+
 CREATE SCHEMA pickup;
 USE pickup;
 
@@ -23,6 +24,7 @@ CREATE TABLE accounts(
 
 CREATE TABLE pickup_events(
 	event_id int NOT NULL AUTO_INCREMENT,
+    event_name varchar(255),
     account_id int NOT NULL,
     sport_id int NOT NULL,
     maximum_players int NOT NULL,
@@ -74,21 +76,21 @@ VALUES
     ('john', 'jr', 'email', 'god_of_balls', 'abc', 5, 5, 0),
     ('aaa', 'aaa', 'email' ,'aaa', 'aaa', 9, 100, 0);
 
-INSERT INTO pickup_events(account_id, sport_id, maximum_players, current_players, event_location, event_date, event_time)
+INSERT INTO pickup_events(event_name, account_id, sport_id, maximum_players, current_players, event_location, event_date, event_time)
 VALUES 
-    (1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	(1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	(3, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	(2, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM");
+    ("name one", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
+	("name 2", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
+	("name 3", 3, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
+	("name four", 2, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM");
     
-INSERT INTO player_event(account_id, event_id)
+INSERT INTO player_event(account_id, event_id, is_leader)
 VALUES 
-	(1, 1),
-    (1, 2),
-    (2, 1),
-    (3, 1),
-    (3, 3),
-    (2, 4)
+	(1, 1, true),
+    (1, 2, true),
+    (2, 1, false),
+    (3, 1, false),
+    (3, 3, true),
+    (2, 4, true)
 ;
     
 INSERT INTO player_sport_favorite(account_id, sport_id)
@@ -99,5 +101,5 @@ VALUES
     (3, 3)
 ;
 
-SELECT * FROM  player_event;
-
+SELECT * FROM  pickup_events;
+SELECT * FROM player_event;
