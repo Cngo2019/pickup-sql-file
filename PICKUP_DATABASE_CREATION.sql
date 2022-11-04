@@ -73,7 +73,7 @@ VALUES ('Soccer'), ('Football'), ('Basketball');
 
 INSERT INTO accounts(first_name, last_name, email, account_username, account_password, games_joined, games_attended, rating, bio)
 VALUES 
-	('Thomas', 'Zbdoula', 'email', 'tz', '123', 10, 10, 0, "Your ankles will be gone"),
+	('Thomas', 'Zbdoula', 'email', 'tz', '$2a$08$lksChOceDnQzP/u6PLlYaO31kbQYApHQ.pKsIVZcf.yAYAeNhQWVO', 10, 10, 0, "Your ankles will be gone"),
     ('john', 'jr', 'email', 'god_of_balls', 'abc', 5, 5, 0, "ayo"),
     ('aaa', 'aaa', 'email' ,'aaa', 'aaa', 9, 100, 0, "Who wanna ball?");
 
@@ -101,7 +101,6 @@ VALUES
     (2, 1),
     (3, 3)
 ;
+use pickup;
 
-SELECT * FROM  pickup_events;
-SELECT * FROM player_event;
 SELECT * FROM accounts;
