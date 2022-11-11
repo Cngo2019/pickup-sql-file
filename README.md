@@ -1,3 +1,3 @@
 # pickup-sql-file
 
-Most current update: included cascading so that child rows get deleted when an entity gets deleted
+If you are on the development team: GO TO THE "RELEASE" BRANCH
