@@ -79,19 +79,13 @@ VALUES
 
 INSERT INTO pickup_events(event_name, account_id, sport_id, maximum_players, current_players, event_location, event_date, event_time)
 VALUES 
-    ("name one", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	("name 2", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	("name 3", 3, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	("name four", 2, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM");
+    ("name one", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM");
     
 INSERT INTO player_event(account_id, event_id, is_leader)
 VALUES 
 	(1, 1, true),
-    (1, 2, true),
     (2, 1, false),
-    (3, 1, false),
-    (3, 3, true),
-    (2, 4, true)
+    (3, 1, false)
 ;
     
 INSERT INTO player_sport_favorite(account_id, sport_id)
@@ -103,4 +97,4 @@ VALUES
 ;
 use pickup;
 
-SELECT * FROM accounts;
+SELECT * FROM pickup_events;
