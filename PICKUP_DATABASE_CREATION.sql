@@ -79,7 +79,7 @@ VALUES
 
 INSERT INTO pickup_events(event_name, account_id, sport_id, maximum_players, current_players, event_location, event_date, event_time)
 VALUES 
-    ("name one", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM");
+    ("name one", 1, 1, 6, 4, "ChIJHXT-SnMdVIgRv_TQQUlJ9oI", "10/13/2022", "6:30 PM");
     
 INSERT INTO player_event(account_id, event_id, is_leader)
 VALUES 
