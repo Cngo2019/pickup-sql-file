@@ -19,6 +19,7 @@ CREATE TABLE accounts(
     games_joined int NOT NULL,
     games_attended int NOT NULL,
     rating int NOT NULL,
+    bio varchar(255) NOT NULL,
     PRIMARY KEY(account_id)
 );
 
@@ -70,27 +71,21 @@ CREATE TABLE player_friend(
 INSERT INTO sports(sport_name)
 VALUES ('Soccer'), ('Football'), ('Basketball');
 
-INSERT INTO accounts(first_name, last_name, email, account_username, account_password, games_joined, games_attended, rating)
+INSERT INTO accounts(first_name, last_name, email, account_username, account_password, games_joined, games_attended, rating, bio)
 VALUES 
-	('Thomas', 'Zbdoula', 'email', 'tz', '123', 10, 10, 0),
-    ('john', 'jr', 'email', 'god_of_balls', 'abc', 5, 5, 0),
-    ('aaa', 'aaa', 'email' ,'aaa', 'aaa', 9, 100, 0);
+	('Thomas', 'Zbdoula', 'email', 'tz', '$2a$08$lksChOceDnQzP/u6PLlYaO31kbQYApHQ.pKsIVZcf.yAYAeNhQWVO', 10, 10, 0, "Your ankles will be gone"),
+    ('john', 'jr', 'email', 'god_of_balls', 'abc', 5, 5, 0, "ayo"),
+    ('aaa', 'aaa', 'email' ,'aaa', 'aaa', 9, 100, 0, "Who wanna ball?");
 
 INSERT INTO pickup_events(event_name, account_id, sport_id, maximum_players, current_players, event_location, event_date, event_time)
 VALUES 
-    ("name one", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	("name 2", 1, 1, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	("name 3", 3, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM"),
-	("name four", 2, 2, 6, 4, "urec nc charlotte", "10/13/2022", "6:30 PM");
+    ("name one", 1, 1, 6, 4, "ChIJHXT-SnMdVIgRv_TQQUlJ9oI", "10/13/2022", "6:30 PM");
     
 INSERT INTO player_event(account_id, event_id, is_leader)
 VALUES 
 	(1, 1, true),
-    (1, 2, true),
     (2, 1, false),
-    (3, 1, false),
-    (3, 3, true),
-    (2, 4, true)
+    (3, 1, false)
 ;
     
 INSERT INTO player_sport_favorite(account_id, sport_id)
@@ -100,7 +95,6 @@ VALUES
     (2, 1),
     (3, 3)
 ;
+use pickup;
 
-SELECT * FROM  pickup_events;
-SELECT * FROM player_event;
-SELECT * FROM accounts;
+SELECT * FROM pickup_events;
