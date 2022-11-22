@@ -62,14 +62,6 @@ CREATE TABLE player_sport_favorite(
     FOREIGN KEY (sport_id) REFERENCES sports(sport_id) ON DELETE CASCADE
 );
 
-# This table should be a two way releationship. I read online somewhere that it was the case.
-CREATE TABLE player_friend(
-	account_id INT NOT NULL,
-    friend_id INT NOT NULL,
-	FOREIGN KEY (account_id) REFERENCES accounts(account_id) ON DELETE CASCADE,
-    FOREIGN KEY (friend_id) REFERENCES accounts(account_id) ON DELETE CASCADE
-);
-
 INSERT INTO sports(sport_name)
 VALUES ('Soccer'), ('Football'), ('Basketball');
 
