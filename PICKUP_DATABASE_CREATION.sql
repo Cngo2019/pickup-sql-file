@@ -35,6 +35,7 @@ CREATE TABLE pickup_events(
     event_time varchar(255),
     event_city varchar(255),
     event_state varchar(255),
+    place_id varchar(255),
     PRIMARY KEY (event_id),
     FOREIGN KEY (account_id) REFERENCES accounts(account_id) ON DELETE CASCADE,
     FOREIGN KEY (sport_id) REFERENCES sports(sport_id) ON DELETE CASCADE
@@ -71,9 +72,9 @@ VALUES
     ('john', 'jr', 'email', 'god_of_balls', 'abc', 5, 5, 0, "ayo"),
     ('aaa', 'aaa', 'email' ,'aaa', 'aaa', 9, 100, 0, "Who wanna ball?");
 
-INSERT INTO pickup_events(event_name, account_id, sport_id, maximum_players, current_players, event_location, event_date, event_time, event_city, event_state)
+INSERT INTO pickup_events(event_name, account_id, sport_id, maximum_players, current_players, event_location, event_date, event_time, event_city, event_state, place_id)
 VALUES 
-    ("name one", 1, 1, 6, 4, "UREC CHARLOTTE", "10/13/2022", "6:30 PM", "Charlotte", "NC");
+    ("name one", 1, 1, 6, 4, "UREC CHARLOTTE", "10/13/2022", "6:30 PM", "Charlotte", "NC", "ChIJHXT-SnMdVIgRv_TQQUlJ9oI");
     
 INSERT INTO player_event(account_id, event_id, is_leader)
 VALUES 
